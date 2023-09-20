@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -5,9 +7,10 @@ const path = require("path");
 const mongoose = require("mongoose");
 const booksRoutes = require("./routes/booksRoutes");
 const usersRoutes = require("./routes/usersRoutes");
+require('dotenv').config()
+const uri = process.env.DB_URI;
 
-const uri =
-  "mongodb+srv://mizouniismael:4Kej5nVqVHVrlQm1@ismael.ygplfnw.mongodb.net/?retryWrites=true&w=majority";
+console.log(require("dotenv").config())
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })

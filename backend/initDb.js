@@ -1,11 +1,12 @@
+require('dotenv').config();
 
 const mongoose = require("mongoose");
 const Book = require("../models/book");
 const data = require("../public/data/data.json");
 
+
 mongoose
-  .connect(
-    "mongodb+srv://mizouniismael:4Kej5nVqVHVrlQm1@ismael.ygplfnw.mongodb.net/?retryWrites=true&w=majority",
+  .connect(process.env.DB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
